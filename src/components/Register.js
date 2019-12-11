@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
+import {Link} from 'react-router-dom'
 
 
 const useStyles = makeStyles(theme => ({
@@ -42,6 +43,10 @@ const genders = [
       value: 'female',
       label: 'Female',
     },
+    {
+      value: 'other',
+      label: 'other'
+    }
     
 ];
 
@@ -92,33 +97,33 @@ export default function Register(props) {
   };
 
 
-
+  // POST REQUEST
   const handleClick = () => {
-      console.log(username, password, gender, weight, sport, goal)
-      debugger
-      fetch('http://localhost:3000/users',{
-          method: 'POST',
-          headers: {
-            'Content-Type':'application/json',
-            'Accept': 'application/json' 
-          },
-          body: JSON.stringify({
-              user: {
-                username: username,
-                password: password,
-                gender: gender,
-                weight: weight,
-                sport_id: sport,
-                goal_id: goal
-              }
-              
-          })
-      })
-      .then(resp => resp.json())
-      .then(user => {
-          props.setUser(user)
-          props.routerProps.history.push("/home")
+    fetch('http://localhost:3000/users',{
+        method: 'POST',
+        headers: {
+          'Content-Type':'application/json',
+          'Accept': 'application/json' 
+        },
+        body: JSON.stringify({
+            user: {
+              username: username,
+              password: password,
+              gender: gender,
+              weight: weight,
+              sport_id: sport,
+              goal_id: goal
+            }
+            
         })
+    })
+    .then(resp => resp.json())
+    .then(resp => {
+      console.log(resp)
+      props.setUser(resp.user)
+      props.routerProps.history.push("/home")
+    })
+
   }
 
 
@@ -231,7 +236,7 @@ export default function Register(props) {
             className={classes.textField}
             value={sport}
             onChange={handleSportChange}
-            helperText="Select the Sport you like to train for"
+            helperText="Select the Sport you like to train for now"
             margin="normal"
             >
                 {sports.map((sport, index) => (
@@ -272,6 +277,14 @@ export default function Register(props) {
             onClick={handleClick}
             >
                 SUBMIT
+            </Button>
+
+            <br></br>
+            <Button variant="contained" 
+            color="secondary"
+            >
+            <Link to="/login">Back To Login</Link>
+                
             </Button>
         </Grid>
 
