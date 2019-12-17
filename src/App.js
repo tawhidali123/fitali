@@ -9,6 +9,7 @@ import Routines from './components/Routines'
 import Edit from './components/Edit'
 import Exercise from './components/Exercise';
 import Logout from './components/Logout'
+import Startup from './components/Startup'
 
 function App() {
   let [user, setUser] = useState({
@@ -52,7 +53,8 @@ function App() {
   return (
     <div className="App">
     <Switch>
-      <Route path="/login" render={(routerProps) => <Login routerProps={routerProps} setUser={setUser}/> }/>
+      <Route path="/" exact render={(routerProps) => <Startup routerProps={routerProps} /> }/>
+      <Route path="/login" exact render={(routerProps) => <Login routerProps={routerProps} setUser={setUser}/> }/>
       <Route path="/register" render={(routerProps) => <Register routerProps={routerProps} setUser={setUser}/>}/>
 
       <Route path="/home" render={(routerProps) => <Home routerProps={routerProps} user={user}/>}/>
