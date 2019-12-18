@@ -162,6 +162,12 @@ export default function Navigation() {
                 <Link to="/edit"><ListItemText primary={'Edit Sport/Goals'} /></Link>
                 </ListItem>
             }
+            {
+                <ListItem button key={'Update Weight'}>
+                <ListItemIcon><FitnessCenterIcon /></ListItemIcon>
+                <Link to="/weight"><ListItemText primary={'Update Weight'} /></Link>
+                </ListItem>
+            }
         </List>
         <Divider />
         <List>

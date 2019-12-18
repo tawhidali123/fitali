@@ -104,10 +104,10 @@ export default function ExerciseCard(props) {
                     </Typography>
                 </CardContent>
                 <CardActions disableSpacing>
-                    <IconButton aria-label="add to favorites">
+                    {/* <IconButton aria-label="add to favorites">
                     <FavoriteIcon />
                     <Typography>favorites</Typography>
-                    </IconButton>
+                    </IconButton> */}
                     
                     <IconButton
                     className={clsx(classes.expand, {

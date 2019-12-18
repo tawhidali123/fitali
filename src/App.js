@@ -10,6 +10,7 @@ import Edit from './components/Edit'
 import Exercise from './components/Exercise';
 import Logout from './components/Logout'
 import Startup from './components/Startup'
+import Weight from './components/Weight'
 
 function App() {
   let [user, setUser] = useState({
@@ -61,6 +62,7 @@ function App() {
       <Route path="/routines" render={(routerProps) => <Routines routerProps={routerProps} user={user} findSpecificRoutine={findSpecificRoutine}/>}/>
       <Route path="/edit" render={(routerProps) => <Edit routerProps={routerProps} setUser={setUser} user={user}/>}/>
       <Route path="/exercise" render={(routerProps) => <Exercise routerProps={routerProps} user={user} routine={routine}/>}/>
+      <Route path="/weight" render={(routerProps) => <Weight routerProps={routerProps} setUser={setUser} user={user} />}/>
       <Route path="/logout" render={(routerProps) => <Logout routerProps={routerProps} clearStorage={clearStorage} />}/>
     </Switch>
     </div>
