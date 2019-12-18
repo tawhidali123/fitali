@@ -44,7 +44,7 @@ export default function Weight(props) {
 
     let handleClick = evt => {
         // console.log(newWeight)
-        fetch(`http://localhost:3000/users/${props.user.id}`, {
+        fetch(`https://peaceful-atoll-14531.herokuapp.com/users/${props.user.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type':'application/json',

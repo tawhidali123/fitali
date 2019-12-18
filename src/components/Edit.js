@@ -54,7 +54,7 @@ export default function Edit(props) {
     let handleClick = () => {
         console.log(sport, goal)
 
-        fetch(`http://localhost:3000/users/${props.user.id}`,{
+        fetch(`https://peaceful-atoll-14531.herokuapp.com/users/${props.user.id}`,{
             method: 'PATCH',
             headers: {
                 'Content-Type':'application/json',
@@ -83,14 +83,14 @@ export default function Edit(props) {
 
     useEffect(() => {
 
-        fetch('http://localhost:3000/sports')
+        fetch('https://peaceful-atoll-14531.herokuapp.com/sports')
         .then(res => res.json())
         .then(resp =>{
             setSports(resp)
             console.log(resp)
         })
     
-        fetch('http://localhost:3000/goals')
+        fetch('https://peaceful-atoll-14531.herokuapp.com/goals')
         .then(res => res.json())
         .then(resp => {
             setGoals(resp)

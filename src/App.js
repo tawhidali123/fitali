@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     if(localStorage.getItem('token')){
-      fetch('http://localhost:3000/persist', {
+      fetch('https://peaceful-atoll-14531.herokuapp.com/persist', {
         method: 'GET',
         headers: {
           "Authorization": localStorage.getItem('token')

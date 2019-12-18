@@ -51,7 +51,7 @@ export default function Login(props) {
 
     let handleClick = () => {
         // console.log(username, password)
-        fetch('http://localhost:3000/login',{
+        fetch('https://peaceful-atoll-14531.herokuapp.com/login',{
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",                                                                                      

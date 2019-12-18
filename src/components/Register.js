@@ -99,7 +99,7 @@ export default function Register(props) {
 
   // POST REQUEST
   const handleClick = () => {
-    fetch('http://localhost:3000/users',{
+    fetch('https://peaceful-atoll-14531.herokuapp.com/users',{
         method: 'POST',
         headers: {
           'Content-Type':'application/json',
@@ -131,14 +131,14 @@ export default function Register(props) {
 
   useEffect(() => {
 
-    fetch('http://localhost:3000/sports')
+    fetch('https://peaceful-atoll-14531.herokuapp.com/sports')
     .then(res => res.json())
     .then(resp =>{
         setSports(resp)
         console.log(resp)
     })
 
-    fetch('http://localhost:3000/goals')
+    fetch('https://peaceful-atoll-14531.herokuapp.com/goals')
     .then(res => res.json())
     .then(resp => {
         setGoals(resp)
